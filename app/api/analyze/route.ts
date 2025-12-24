@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     await dbConnect();
 
     const { object } = await generateObject({
-      model: google('gemini-1.5-pro-latest'),
+      model: google('gemini-2.5-flash'),
       schema: medicalReportSchema,
       prompt: `Analyze this medical lab report for a [${knowledgeLevel}] level reader: ${reportText}`,
     });
